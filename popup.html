@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        --dex-primary: #1a1a1a;
+        --dex-ink: #854d0e;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        width: 360px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #1f2937;
+        background: #ffffff;
+      }
+      .dex-search {
+        display: flex;
+        gap: 6px;
+        padding: 12px;
+        background: var(--dex-primary);
+      }
+      .dex-search input {
+        flex: 1 1 auto;
+        min-width: 0;
+        padding: 8px 10px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        outline: none;
+      }
+      .dex-search button {
+        flex: 0 0 auto;
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        background: #ffffff;
+        color: var(--dex-ink);
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .dex-search button:hover {
+        background: #fff7cc;
+      }
+      .dex-body {
+        max-height: 420px;
+        overflow-y: auto;
+        padding: 4px 12px;
+      }
+      .dex-status {
+        padding: 16px 0;
+        color: #6b7280;
+      }
+      .dex-error {
+        color: #b91c1c;
+      }
+      .dex-entry {
+        padding: 12px 0;
+        border-bottom: 1px solid #f0f0f0;
+      }
+      .dex-entry:last-child {
+        border-bottom: none;
+      }
+      .dex-source {
+        display: inline-block;
+        margin-bottom: 6px;
+        padding: 2px 8px;
+        background: #eef2ff;
+        color: #3730a3;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 600;
+      }
+      .dex-rep abbr {
+        text-decoration: none;
+        border-bottom: 1px dotted #9ca3af;
+        cursor: help;
+      }
+      .dex-footer {
+        padding: 10px 12px;
+        border-top: 1px solid #f0f0f0;
+        background: #fafafa;
+      }
+      .dex-footer:empty {
+        display: none;
+      }
+      .dex-link {
+        color: var(--dex-ink);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 13px;
+      }
+      .dex-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="dex-search" id="dex-form">
+      <input
+        id="dex-input"
+        type="text"
+        placeholder="Caută un cuvânt…"
+        autocomplete="off"
+        autofocus
+      />
+      <button type="submit">Caută</button>
+    </form>
+    <div class="dex-body" id="dex-body"></div>
+    <div class="dex-footer" id="dex-footer"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>
